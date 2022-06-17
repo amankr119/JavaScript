@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #demo{
+          width: 100%;
+          padding: 50px 0;
+          background-color: lightblue;
+          margin-top: 20px;
+        }
+    </style>
+    <title>javaScript-5th</title>
+</head>
+<body>
+    <h1>js-five</h1>
+    <h2>There are some features of javaScript</h2>
+    <p>Click the "Details" button to toggle between hiding and showing the DIV element:</p>
+    <button onclick="myFunction()">Details</button>
+    <div id="demo">
+        <ol>
+            <li>JavaScript which is ofen known as JS, is a high level dynemic interpreted programming language.</li>
+            <li>It allows client side scripting to create completely dynamic web application and website</li>
+            <li>JavaScript was initially design for making pages "allive"</li>
+            <li>JavaScript can be executed in the browser itself</li>
+            <li>It can be executed on the browser as well as server</li>
+            <li>JavaScript is a safe language when used in browser</li>
+        </ol>
+    </div>
+
+    <script>
+        function myFunction()
+        {
+            var x = document.getElementById("demo");
+            if (x.style.display === "none"){
+                x.style.display = "block";
+            } 
+            else{
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

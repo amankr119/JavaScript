@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount-table</title>
+    <style>
+        body{
+            background-color: rgba(120,55,55,1);
+            margin: auto;
+            padding: auto;
+        }
+        form{
+            padding: 20px;
+        }
+        table{
+            margin-left: 40%;
+        }
+        h2{
+            background-color: rgb(120,120,120);
+            text-align: center;
+        }
+        #submit{
+            margin-left: 35%;
+            width: 30%;
+            background-color: blue;
+            border-radius: 5px;
+            color: #fff;
+        }
+        #discount{
+            background-color: yellow;
+            width: 30%;
+            margin-left: 35%;
+            text-align: center;
+        }
+        #result{
+            background-color: green;
+            text-align: center;
+            width: 30%;
+            margin-left: 35%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Discount price</h2>
+    <form onsubmit=" return calculate()">
+        <table>
+            <tr>
+                <td>Prodocut Name</td>
+                <td><input type="text" name="name" id="name" pattern="[a-zA-Z/s]+" required></td>
+            </tr>
+            <tr>
+                <td>Product Price</td>
+                <td><input type="number" name="price" id="price" min="15000" required></td>
+            </tr>
+            <tr>
+                <td>Season</td>
+                <td><select name="season" id="season">
+                    <option value="Summersale">Summersale</option>
+                    <option value="Newyearsale">Newyearsale</option>
+                    <option value="Clearancesale">Clearancesale</option>
+                </select></td>
+            </tr>
+        </table> <br>
+        <input type="submit" id="submit" value="Get Discount Price">
+    </form>
+    <div id="discount"></div>
+    <div id="result"></div>
+    <script>
+        function calculate()
+        {
+            var a=document.getElementById('price').value;
+            var s=document.getElementById('season').value;
+            var d;
+            if(s=="Summersale"){
+                document.getElementById('discount').innerHTML="the discount is 10%";
+                d=(a-((a*10)/100));
+            }
+            else if(s=="Newyearsale"){
+                document.getElementById('discount').innerHTML="the discount is 5%";
+                d=(a-((a*5)/100));
+            }
+            else if(s=="Clearancesale"){
+                document.getElementById('discount').innerHTML="the discount is 15%";
+                d=(a-((a*15)/100));
+            }
+            document.getElementById('result').innerHTML="the discount price is : Rs "+d;
+            return false;
+        }
+    </script>
+    
+</body>
+</html>
